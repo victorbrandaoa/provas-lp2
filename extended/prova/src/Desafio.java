@@ -1,12 +1,12 @@
 public abstract class Desafio {
 
-    private String titulo;
+    protected String titulo;
 
-    private String descricao;
+    protected String descricao;
 
     protected int execuxoes;
 
-    private String tipo;
+    protected String tipo;
 
     public Desafio(String titulo, String descricao, String tipo) {
         this.titulo = titulo;

@@ -14,40 +14,67 @@ public class MeuDesafioMinhaVida {
         this.acoes = new HashMap<>();
     }
 
+    private boolean existeDesafio(String titulo) {
+        for (Desafio desafio : this.desafios) {
+            if (titulo.equals(desafio.getTitulo())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public int addDesafioPessoal(String titulo, String descricao) {
-        Desafio desafio = new DesafioPessoal(titulo, descricao);
-        this.desafios.add(desafio);
-        return this.desafios.size();
+        if (!existeDesafio(titulo)) {
+            Desafio desafio = new DesafioPessoal(titulo, descricao);
+            this.desafios.add(desafio);
+            return this.desafios.size();
+        }
+        return -1;
     }
 
     public int addDesafioPessoal(String titulo) {
-        Desafio desafio = new DesafioPessoal(titulo);
-        this.desafios.add(desafio);
-        return this.desafios.size();
+        if (!existeDesafio(titulo)) {
+            Desafio desafio = new DesafioPessoal(titulo);
+            this.desafios.add(desafio);
+            return this.desafios.size();
+        }
+        return -1;
     }
 
     public int addDesafioMaterial(String titulo, String descricao, double investimento) {
-        Desafio desafio = new DesafioMaterial(titulo, descricao, investimento);
-        this.desafios.add(desafio);
-        return this.desafios.size();
+        if (!existeDesafio(titulo)) {
+            Desafio desafio = new DesafioMaterial(titulo, descricao, investimento);
+            this.desafios.add(desafio);
+            return this.desafios.size();
+        }
+        return -1;
     }
 
     public int addDesafioMaterial(String titulo, double investimento) {
-        Desafio desafio = new DesafioMaterial(titulo, investimento);
-        this.desafios.add(desafio);
-        return this.desafios.size();
+        if (!existeDesafio(titulo)) {
+            Desafio desafio = new DesafioMaterial(titulo, investimento);
+            this.desafios.add(desafio);
+            return this.desafios.size();
+        }
+        return -1;
     }
 
     public int addDesafioSocial(String titulo, String descricao, int numeroPessoasAfetadas) {
-        Desafio desafio = new DesafioSocial(titulo, descricao, numeroPessoasAfetadas);
-        this.desafios.add(desafio);
-        return this.desafios.size();
+        if (!existeDesafio(titulo)) {
+            Desafio desafio = new DesafioSocial(titulo, descricao, numeroPessoasAfetadas);
+            this.desafios.add(desafio);
+            return this.desafios.size();
+        }
+        return -1;
     }
 
     public int addDesafioSocial(String titulo, int numeroPessoasAfetadas) {
-        Desafio desafio = new DesafioSocial(titulo, numeroPessoasAfetadas);
-        this.desafios.add(desafio);
-        return this.desafios.size();
+        if (!existeDesafio(titulo)) {
+            Desafio desafio = new DesafioSocial(titulo, numeroPessoasAfetadas);
+            this.desafios.add(desafio);
+            return this.desafios.size();
+        }
+        return -1;
     }
 
     public String exibirDesafio(int idDesafio) {
